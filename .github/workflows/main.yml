@@ -1,0 +1,22 @@
+name: Network Monitor
+on:
+  schedule:
+    - cron: '*/10 * * * *' # รันทุก 10 นาที
+  workflow_dispatch: # ให้เรากดรันเองได้ด้วย
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: |
+          pip install gspread oauth2client
+      - name: Run Ping
+        env:
+          GOOGLE_CREDS: ${{ secrets.GOOGLE_CREDS }}
+        run: python monitor.py
