@@ -1,24 +1,28 @@
-name: Network Monitor
+name: Network Monitor Python
 on:
   schedule:
-    - cron: '*/10 * * * *'
-  workflow_dispatch:
+    - cron: '*/10 * * * *' # รันทุก 10 นาที
+  workflow_dispatch: # ให้กดรันมือได้
 
 jobs:
-  ping:
+  ping-task:
     runs-on: ubuntu-latest
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # บังคับใช้ Node 24 เพื่อปิดคำเตือน
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install dependencies
+
+      - name: Install Dependencies
         run: |
           pip install gspread google-auth
-      - name: Run Ping
+
+      - name: Run Ping Script
         env:
           GOOGLE_CREDS: ${{ secrets.GOOGLE_CREDS }}
         run: python monitor.py
