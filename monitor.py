@@ -17,7 +17,7 @@ try:
     client = gspread.authorize(creds)
 
     # *** ตรวจสอบชื่อไฟล์ตรงนี้ให้ตรงเป๊ะ ***
-    SHEET_NAME = "ชื่อไฟล์ของคุณ" 
+    SHEET_NAME = "sites-mon" 
     sheet = client.open(SHEET_NAME).get_worksheet(0)
 
     # อ่านค่าจากคอลัมน์ O
