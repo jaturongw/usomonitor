@@ -17,7 +17,7 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: |
-          pip install gspread oauth2client
+          pip install gspread google-auth
       - name: Run Ping
         env:
           GOOGLE_CREDS: ${{ secrets.GOOGLE_CREDS }}
