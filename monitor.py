@@ -41,6 +41,7 @@ def run_monitor():
         # 2. Open Sheet
         SHEET_NAME = "sites-mon"
         sheet = client.open(SHEET_NAME).get_worksheet(0)
+        print(sheet.title)
 
         # 3. ดึงข้อมูลเฉพาะช่วงที่ต้องการ (O2:O40) เพื่อลด Load
         # get_values คืนค่าเป็น List of Lists [[val], [val]]
