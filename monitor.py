@@ -22,10 +22,10 @@ def ping_check(ip):
 def run_monitor():
     try:
         # 1. Authentication
-        scope = [
-            'https://googleapis.com',
-            'https://googleapis.com'
-        ]
+scope = [
+    'https://www.googleapis.com/auth/spreadsheets',
+    'https://www.googleapis.com/auth/drive'
+]
         
         creds_raw = os.environ.get('GOOGLE_CREDS')
         if not creds_raw:
