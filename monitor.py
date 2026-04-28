@@ -20,12 +20,14 @@ def ping_check(ip):
         return "Down"
 
 def run_monitor():
+   def run_monitor():
     try:
-        # 1. Authentication
-scope = [
-    'https://www.googleapis.com/auth/spreadsheets',
-    'https://www.googleapis.com/auth/drive'
-]
+        # บรรทัดเหล่านี้ต้องมีย่อหน้า (Indent) เข้ามา 2 ระดับ
+        scope = [
+            'https://googleapis.com',
+            'https://googleapis.com'
+        ]
+        # ... โค้ดส่วนที่เหลือใน try ก็ต้องย่อหน้าให้ตรงกัน ...
         
         creds_raw = os.environ.get('GOOGLE_CREDS')
         if not creds_raw:
