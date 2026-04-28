@@ -25,11 +25,7 @@ def ping_check(ip):
 def run_monitor():
     try:
         # 1. ตั้งค่า Scopes ให้ถูกต้อง (ต้องมี /auth/)
-        scope = [
-            'https://googleapis.com',
-            'https://googleapis.com'
-        ]
-
+        scope = ['https://googleapis.com']
         # ดึงค่าจาก GitHub Secrets
         creds_raw = os.environ.get('GOOGLE_CREDS')
         if not creds_raw:
