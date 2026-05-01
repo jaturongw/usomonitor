@@ -10,8 +10,8 @@ def run_monitor():
         
         # 1. กำหนด Scope (ต้องมี www และ /auth/)
         scope = [
-            'https://googleapis.com',
-            'https://googleapis.com'
+            'https://www.googleapis.com/auth/spreadsheets',
+            'https://www.googleapis.com/auth/drive.readonly',
         ]
 
         # 2. ดึงค่าจาก GitHub Secrets
