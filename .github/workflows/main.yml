@@ -25,4 +25,5 @@ jobs:
       - name: Run Ping Script
         env:
           GOOGLE_CREDS: ${{ secrets.GOOGLE_CREDS }}
+          MONITOR_CHECK_WORKERS: "8"
         run: python monitor.py

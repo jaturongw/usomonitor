@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.py[cod]
+
+# Service account keys — keep only in GitHub Secrets / local env, never commit
+newagent-*.json
